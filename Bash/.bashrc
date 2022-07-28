@@ -140,6 +140,9 @@ alias viminit='vim ~/.config/nvim/init.vim'
 # FZF Settings
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export PATH=$PATH:~/.config/nvim/pack/minpac/start/fzf/bin
-export FZF_DEFAULT_COMMAND='rg --files'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_DEFAULT_COMMAND='rg --files --hidden'
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --multi --preview="bat --color=always --style=numbers --line-range=:500 {}" --bind ctrl-h:preview-page-up,ctrl-l:preview-page-down'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -100'"
+
+
